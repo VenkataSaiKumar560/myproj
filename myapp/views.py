@@ -93,3 +93,9 @@ def help(req):
 		return HttpResponse("Donated Something")
 	obj = Seeking.objects.all()
 	return render(req,'myapp/help.html',{'data':obj})
+
+
+def another(req,ma):
+
+	obj1 = Register.objects.get(Email=ma)
+	return render(req,'myapp/another.html',{'data':obj1})

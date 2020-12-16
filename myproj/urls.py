@@ -26,6 +26,8 @@ urlpatterns = [
     path('edit/<str:num>/',views.edit,name='edit'),
     path('seek/',views.seek,name='seek'),
     path('help/',views.help,name='help'),
+    path('another/<str:ma>/',views.another,name='another'),
+
 
 
 ]

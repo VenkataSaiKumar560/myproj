@@ -6,44 +6,43 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'myapp/format.css' %}">
 	
 </head>
-<body >
+<body style="position: absolute;left: 150px; top:30px;">
 	<form action="{% url 'register' %}" method='POST' align="left">
 		{% csrf_token %}
 		<br>
 		<br>
 		<br>
 	
-			<h2 style="color:white;font-style:italic;"><u>Registration Form</u></h2>
+			<h2 style="color:white;font-style:italic;">&nbsp;&nbsp;&nbsp;&nbsp;<u>Registration Form</u></h2>
 		
-			<br><br>
 		<label style="color: white">Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		<input type="text" name="name" placeholder="Enter your Name" required>
 		<br><br>
-		<label style="color: white">Email-ID: &nbsp;</label>
+		<label style="color: white">Email-ID:</label>
 		<input type="email" name="mail" placeholder="Enter your Mail-ID" required>
 		<br><br>
 		
 		<label style="color: white">Password:&nbsp;</label>
 		<input type="password" name="pass" placeholder="Enter your password" REQUIRED>
 		<br><br>
-		<label style="color: white">Address:&nbsp;</label>
+		<label style="color: white">Address:&nbsp;&nbsp;&nbsp;</label>
 		<input type="text" name="addr" placeholder="Enter your password" REQUIRED>
 		<br><br>
 
-		<label style="color: white">DOB:&nbsp;</label>
+		<label style="color: white">DOB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		<input type="date" name="dob">
 		<br>
 		<br>
-		<label style="color: white">Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		<select name="gender" style="color: white">
+		<label style="color: white">Gender:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<select name="gender" style="color: black">
 			<option>Male</option>
 			<option>Female</option>
 			<option>Other</option>
 		</select>
 		<br><br>
-		<input style="background-color: #00ffff; cursor: pointer;"  class="button button1" type="submit" value="Register">
+		<input style="background-color: #00ffff; cursor: pointer;position: absolute;left: 60px; top:360px;"  class="button button1" type="submit" value="Register">
 		<br><br>
-		<button  class="button button1" type="button" ><a  style="text-decoration: none;color: black" href="{% url 'home' %}">Home</a></button>
+		<button style="position: absolute;left: 60px; top:420px;"  class="button button1" type="button" ><a  style="text-decoration: none;color: black;" href="{% url 'home' %}">Home</a></button>
 	
 
 	</form>

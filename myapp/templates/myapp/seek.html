@@ -1,7 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>SeekHelp</title>
+	<style>
+		body{
+			background-image: url('https://cdn.pixabay.com/photo/2017/10/25/17/26/hands-2888625__480.jpg');
+			background-repeat:round;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.button{
+			
+			border: none;
+			background-color: purple;
+			padding: 10px;
+			size: 100;
+
+		}
+		.button1{
+			border-radius: 12px;
+
+		}
+	</style>
 </head>
 <body>
 	<form action="{% url 'seek' %}" method="POST" align="center">
@@ -23,7 +44,7 @@
 		<input type="text" name="quan" placeholder="Quantity" REQUIRED>
 		<br><br>
 
-		<input style="background-color: lightgreen; cursor: pointer;" type="submit" value="SUBMIT">
+		<input style="background-color: lightgreen; cursor: pointer;"class="button button1" type="submit" value="SUBMIT">
 	</form>
 	<br>
 	<br>

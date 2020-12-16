@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UserDetails Page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'myapp/format.css' %}">
+</head>
+<body style="position: absolute;left: 160px; top:150px;color: white;font-size: 20px">
+<h4>Your Details</h4>
+
+
+			<ol>
+			
+				<li>Your Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  {{data.Name}}</li>
+				<li>Your Email ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;  {{data.Email}}</li>
+				<li>Your Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; {{data.Password}}</li>
+				<li>Your Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;  {{data.Address}}</li>
+				<li>Your DateOfBirth&nbsp;:&nbsp;&nbsp;{{data.DOB}}</li>
+				<li>Your Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  :&nbsp;&nbsp;  {{data.Gender}}</li>
+
+			</ol>
+
+			<a style="background-color: #00bfff	; cursor: pointer;text-decoration: none;color:black"  class="button button1"  href="{% url 'edit' data.Email  %}">UpdateYourDetails</a>
+
+</body>
+</html>

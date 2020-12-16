@@ -6,27 +6,25 @@
 	<title>Login Page</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'myapp/format.css' %}">
 </head>
-<body align="left">
+<body style="position: absolute;left: 200px; top: 40px;">
 	<form action="{% url 'login' %}" method="POST" align="left">
 	{% csrf_token %}
 	<br><br><br>
-	<h2 style="color: white; " ><u>Login Form</u></h2>
-	<br>
-	<br>
-	<br>
+	<h2 style="color: white; "> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Login Form</u></h2>
 	
-		<label style="color: white">&nbsp;&nbsp;Email ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		<input style="border-style: initial;" type="text" name="mail" placeholder="Enter your Regd ID" required>
+	
+		<label style="color: white">Email ID:&nbsp;&nbsp;&nbsp;</label>
+		<input  type="text" name="mail" placeholder="Enter your Regd ID" required>
 		<br><br>
 
-		<label style="color: white">Password:&nbsp;</label>
+		<label style="color: white">Password:&nbsp;&nbsp;</label>
 		<input type="password" name="pass" placeholder="Enter your password" REQUIRED>
 		<br><br>
-		<input style="background-color: #00ffff; cursor: pointer;"  class="button button1" type="submit"value="LOGIN">
+		<input style="background-color: #00ffff; cursor: pointer;position: absolute;left: 80px; top:200px;"  class="button button1" type="submit"value="LOGIN">
 	</form>
 	<br>
 	<br>
 	<br>
-	<button  class="button button1" type="button" ><a  style="text-decoration: none;color:black" href="{% url 'home' %}">Home</a></button>
+	<button style="position: absolute;left: 80px; top:250px;" class="button button1" type="button" ><a  style="text-decoration: none;color:black;" href="{% url 'home' %}">Home</a></button>
 </body>
 </html>
