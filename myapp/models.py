@@ -4,7 +4,6 @@ from django.db import models
 class Register(models.Model):
 	Name = models.CharField(max_length=40)
 	Email = models.EmailField(unique=True,null=True)
-	Phone = models.CharField(unique=True,max_length=10)
 	Password = models.CharField(unique=True,max_length=30)
 	Address = models.CharField(unique=True,max_length=100)
 	DOB = models.CharField(max_length=20)
@@ -20,9 +19,9 @@ class Seeking(models.Model):
 		return self.Phone
 
 class Helping(models.Model):
+	Hphone = models.CharField(max_length=10,null=True)
 	Hitem = models.CharField(max_length=30)
 	Hquantity = models.CharField(max_length=10)
 
 	def __str__(self):
 		return self.Hitem
-		

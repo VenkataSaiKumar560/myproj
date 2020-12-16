@@ -1,28 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Hi {{data.Name}} !</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'myapp/format.css' %}">
 </head>
-<body>
-			<h1><u>Hello {{data.Name}}! Your Details:</u></h1>
-			<ol>
+<body style="color: white;">
+	<br><br>
+		
+			<h3 >Hello {{data.Name}}! You can check your details here</h3>
+			<div align="right">
+			<a style="background-color: red; cursor: pointer;text-decoration: none;color:white;" class="button button1"  href="{% url 'login' %}">Logout</a></div>
+			<br><br><br>
+
+			<ol >
 			
 				<li>Your Name:{{data.Name}}</li>
 				<li>Your Email ID:{{data.Email}}</li>
-				<li>Your PhoneNo:{{data.Phone}}</li>
 				<li>Your Password:{{data.Password}}</li>
 				<li>Your Address:{{data.Address}}</li>
 				<li>Your DateOfBirth:{{data.DOB}}</li>
 				<li>Your Gender:{{data.Gender}}</li>
 
 			</ol>
-
-	<a href="{% url 'seek' %}">Seek Help From Others</a>
 	<br><br>
-	<a href="{% url 'help' %}">HelpOthers</a>
+	<br><br>
+	<a style="background-color: #00ffff; cursor: pointer;text-decoration: none;color:black"  class="button button1" href="{% url 'seek' %}">SeekHelpFromOthers</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a style="background-color: #00ffff; cursor: pointer; text-decoration: none;color:black"  class="button button1" href="{% url 'help' %}">WantToHelpOthers</a>
 	<br>
 	<br>
-	<a href="{% url 'edit' data.Email  %}">UpdateYourDetails</a>
+	<br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a style="background-color: #00bfff	; cursor: pointer;text-decoration: none;color:black"  class="button button1"  href="{% url 'edit' data.Email  %}">UpdateYourDetails</a>
 			
 
 

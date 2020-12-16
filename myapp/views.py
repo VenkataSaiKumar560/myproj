@@ -9,14 +9,13 @@ def register(req):
 	if req.method == 'POST':
 		username = req.POST['name']
 		usermail = req.POST['mail']
-		userphone = req.POST['phone']
 		userpwd = req.POST['pass']
 		useraddr = req.POST['addr']
 		userdob = req.POST['dob']
 		usergen = req.POST['gender']
-		obj = Register(Name = username,Email=usermail,Phone=userphone,Password=userpwd,Address=useraddr,DOB=userdob,Gender=usergen)
+		obj = Register(Name = username,Email=usermail,Password=userpwd,Address=useraddr,DOB=userdob,Gender=usergen)
 		obj.save()
-		return HttpResponse("User Registered Succesfully !")
+		return render(req,'myapp/home.html')
 
 	return render(req,'myapp/register.html')
 
@@ -42,7 +41,7 @@ def login(req):
 			return HttpResponse("Wrong Password Please Try Again !")
 
 		else:
-			return HttpResponse("Invalid Username/Password")
+			return HttpResponse("Invalid User, You need to Register First !")
 
 	return render(req,'myapp/login.html')
 
@@ -52,7 +51,6 @@ def edit(req,num):
 	if req.method=='POST':
 		obj.Name = req.POST['name']
 		obj.Email = req.POST['mail']
-		obj.Phone = req.POST['phone']
 		obj.Password = req.POST['pass']
 		obj.Address = req.POST['addr']
 		obj.DOB = req.POST['dob']
@@ -77,10 +75,21 @@ def seek(req):
 
 def help(req):
 	if req.method == 'POST':
+		up = req.POST['phone']
 		ut = req.POST['item']
 		uq = req.POST['quan']
-		obj = Helping(Hitem=ut,Hquantity=uq)
+		obj = Helping(Hphone=up,Hitem=ut,Hquantity=uq)
 		obj.save()
+		k = Seeking.objects.get(Phone=up)
+		k.Quantity = str(abs(int(uq)-int(k.Quantity)))
+		k.save()
+
+		obj = Seeking.objects.all()
+		return render(req,'myapp/help.html',{'data':obj})
+		
+
+		#for i in range(len(obj2)):
+
 		return HttpResponse("Donated Something")
 	obj = Seeking.objects.all()
 	return render(req,'myapp/help.html',{'data':obj})

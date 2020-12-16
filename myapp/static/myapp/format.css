@@ -1,8 +1,9 @@
 body{
-			background-image: url('https://cdn.pixabay.com/photo/2018/01/19/07/57/shaking-hands-3091906__480.jpg');
+			background-image: url('https://cdn.pixabay.com/photo/2019/06/06/16/02/technology-4256272__480.jpg');
 			background-repeat:round;
 			background-size: cover;
 			background-attachment: fixed;
+			align-content: left;
 		}
 label{
 			color:black;
@@ -13,7 +14,7 @@ label{
 	.button{
 			
 			border: none;
-			background-color: purple;
+			background-color: #00ffff;
 			padding: 10px;
 			size: 100;
 
