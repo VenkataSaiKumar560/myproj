@@ -1,0 +1,27 @@
+body{
+			background-image: url('https://cdn.pixabay.com/photo/2018/01/19/07/57/shaking-hands-3091906__480.jpg');
+			background-repeat:round;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+label{
+			color:black;
+			font-style: italic;
+			font-weight: bold;
+	}
+	
+	.button{
+			
+			border: none;
+			background-color: purple;
+			padding: 10px;
+			size: 100;
+
+	}
+
+	.button1{
+			border-radius: 12px;
+
+		}
+
+

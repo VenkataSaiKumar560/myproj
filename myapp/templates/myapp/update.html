@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Page</title>
+</head>
+<body align="center">
+	<form method='POST' align="center">
+		{% csrf_token %}
+		<br>
+		<br>
+		<br>
+		<center>
+			<h2><u>Updation Form</u></h2>
+		</center>
+		<br><br>
+		<label>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<input type="text" name="name" value="{{data.Name}}" placeholder="Enter your Name" required>
+		<br><br>
+		<label>Email-ID: &nbsp;</label>
+		<input type="email" name="mail" value ="{{data.Email}}"placeholder="Enter your Mail-ID" required>
+		<br><br>
+		<label>Phone: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<input type="phone" name="phone" value="{{data.Phone}}"placeholder="Ex : 8344659478" required>
+		<br><br>
+		<label>Password:&nbsp;</label>
+		<input type="password" name="pass" value="{{data.Password}}" placeholder="Enter your password" REQUIRED>
+		<br><br>
+		<label>Address:&nbsp;</label>
+		<input type="password" name="addr" value="{{data.Address}}" placeholder="Enter your password" REQUIRED>
+		<br><br>
+		<label>DOB:&nbsp;</label>
+		<input type="password" name="dob" value="{{data.DOB}}" placeholder="Enter your password" REQUIRED>
+		<br><br>
+		<label>Gender:&nbsp;</label>
+		<input type="password" name="gender" value="{{data.Gender}}" placeholder="Enter your password" REQUIRED>
+		<br><br>
+		<input style="background-color: dark" type="submit" value="Update">
+
+	</form>
+	<br>
+	<br>
+	<br>
+
+		
+</body>
+</html>

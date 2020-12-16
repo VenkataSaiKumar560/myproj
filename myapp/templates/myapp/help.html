@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Required Data Page</title>
+</head>
+<body>
+	<h2 align="center"><u>Required Data</u></h2>
+	<table border="1" align="center" cellspacing="1" cellpadding="5">
+		<tr>
+		
+			<th>Phone</th>
+			<th>Item</th>
+			<th>Quantity</th>
+
+		</tr>
+
+		{% for i in data %}
+		<tr>
+
+			
+			<td>{{i.Phone}}</td>
+			<td>{{i.Item}}</td>
+			<td>{{i.Quantity}}</td>
+
+		</tr>
+		{% endfor %}
+	</table>
+	
+
+	<form action="{% url 'help' %}" method="POST" align="center">
+	{% csrf_token %}
+	<br>
+	<br>
+	<center>
+		<h5>For Donation</h5>
+			<h2><u>Help Form</u></h2>
+	</center>
+		
+
+		<label>Item:&nbsp;</label>
+		<input type="text" name="item" placeholder="RequiredItem" REQUIRED>
+		<br><br>
+
+		<label>Quantity:&nbsp;</label>
+		<input type="text" name="quan" placeholder="Quantity" REQUIRED>
+		<br><br>
+
+		<input style="background-color: lightgreen; cursor: pointer;" type="submit" value="SUBMIT">
+	</form>
+		
+
+
+
+
+
+	
+
+	<a href="{% url 'home' %}">HOME</a>
+</body>
+</html>

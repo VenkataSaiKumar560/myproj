@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<style>
+		body{
+			background-image: url('https://cdn.pixabay.com/photo/2016/05/17/19/08/hyacinth-1398839__480.jpg');
+			background-repeat:round;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.button{
+			
+			border: none;
+			background-color: purple;
+			padding: 10px;
+			size: 100;
+
+		}
+		.button1{
+			border-radius: 12px;
+
+		}
+	</style>
+</head>
+<body align="center" >
+
+	<marquee><h1 style="color: white">Covid-Help Center Home Page</h1></marquee>
+	
+	
+	<br>
+<div align="right">
+	<button  class="button button1" type="button" ><a  style="text-decoration: none;color: white" href="{% url 'register' %}">Registration</a></button>
+	<br>
+	<br>
+	<button class="button button1" type="button"><a style="text-decoration: none;color: white" href="{% url 'login' %}">Student/Faculty Login</a></button>
+</div>
+
+</body>
+</html>

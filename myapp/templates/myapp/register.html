@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTRATION PAGE</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'myapp/format.css' %}">
+	
+</head>
+<body align="center">
+	<form action="{% url 'register' %}" method='POST' align="center">
+		{% csrf_token %}
+		<br>
+		<br>
+		<br>
+		<center>
+			<h2 style="color:white;font-style:italic;"><u>Registration Form</u></h2>
+		</center>
+
+		<label>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<input type="text" name="name" placeholder="Enter your Name" required>
+		<br><br>
+		<label>Email-ID: &nbsp;</label>
+		<input type="email" name="mail" placeholder="Enter your Mail-ID" required>
+		<br><br>
+		<label>Phone: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<input type="phone" name="phone" placeholder="Ex : 8344659478" required>
+		<br><br>
+		<label>Password:&nbsp;</label>
+		<input type="password" name="pass" placeholder="Enter your password" REQUIRED>
+		<br><br>
+		<label>Address:&nbsp;</label>
+		<input type="text" name="addr" placeholder="Enter your password" REQUIRED>
+		<br><br>
+
+		<label>DOB:&nbsp;</label>
+		<input type="date" name="dob">
+		<br>
+		<br>
+		<label>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<select name="gender">
+			<option>Male</option>
+			<option>Female</option>
+			<option>Other</option>
+		</select>
+		<br><br>
+		<input style="background-color: lightgreen" type="submit" value="Register">
+		<br><br>
+		<button  class="button button1" type="button" ><a  style="text-decoration: none;color: white" href="{% url 'home' %}">Home</a></button>
+	
+
+	</form>
+	<br>
+	<br>
+	<br>
+	
+	<br>
+	
+		
+</body>
+</html>

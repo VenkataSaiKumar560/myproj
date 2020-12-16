@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'myapp/format.css' %}">
+</head>
+<body align="center">
+	<form action="{% url 'login' %}" method="POST" align="center">
+	{% csrf_token %}
+	<br>
+	<br>
+	<center>
+			<h2><u>Login Form</u></h2>
+	</center>
+		<label>&nbsp;&nbsp;Email ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<input type="text" name="mail" placeholder="Enter your Regd ID" required>
+		<br><br>
+
+		<label>Password:&nbsp;</label>
+		<input type="password" name="pass" placeholder="Enter your password" REQUIRED>
+		<br><br>
+		<input style="background-color: lightgreen; cursor: pointer;"  class="button button1" type="submit" value="LOGIN">
+	</form>
+	<br>
+	<br>
+	<br>
+	<button  class="button button1" type="button" ><a  style="text-decoration: none;color: white" href="{% url 'home' %}">Home</a></button>
+</body>
+</html>

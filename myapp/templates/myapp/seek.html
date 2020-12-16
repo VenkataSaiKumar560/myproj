@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SeekHelp</title>
+</head>
+<body>
+	<form action="{% url 'seek' %}" method="POST" align="center">
+	{% csrf_token %}
+	<br>
+	<br>
+	<center>
+			<h2><u>SeekHelp Form</u></h2>
+	</center>
+		<label>&nbsp;&nbsp;Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<input type="text" name="phone"placeholder="Enter your mobileNo" required>
+		<br><br>
+
+		<label>NeededItem:&nbsp;</label>
+		<input type="text" name="item" placeholder="RequiredItem" REQUIRED>
+		<br><br>
+
+		<label>Quantity:&nbsp;</label>
+		<input type="text" name="quan" placeholder="Quantity" REQUIRED>
+		<br><br>
+
+		<input style="background-color: lightgreen; cursor: pointer;" type="submit" value="SUBMIT">
+	</form>
+	<br>
+	<br>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hi {{data.Name}} !</title>
+</head>
+<body>
+			<h1><u>Hello {{data.Name}}! Your Details:</u></h1>
+			<ol>
+			
+				<li>Your Name:{{data.Name}}</li>
+				<li>Your Email ID:{{data.Email}}</li>
+				<li>Your PhoneNo:{{data.Phone}}</li>
+				<li>Your Password:{{data.Password}}</li>
+				<li>Your Address:{{data.Address}}</li>
+				<li>Your DateOfBirth:{{data.DOB}}</li>
+				<li>Your Gender:{{data.Gender}}</li>
+
+			</ol>
+
+	<a href="{% url 'seek' %}">Seek Help From Others</a>
+	<br><br>
+	<a href="{% url 'help' %}">HelpOthers</a>
+	<br>
+	<br>
+	<a href="{% url 'edit' data.Email  %}">UpdateYourDetails</a>
+			
+
+
+</body>
+</html>
