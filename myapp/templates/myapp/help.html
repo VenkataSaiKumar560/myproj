@@ -8,6 +8,7 @@
 			background-repeat:round;
 			background-size: cover;
 			background-attachment: fixed;
+			align-content: center;
 		}
 		.button{
 			
@@ -23,14 +24,18 @@
 		}
 	</style>
 </head>
-<body>
-	<h2 style="position: absolute;left: 250px; top:20px;" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Required Data</u></h2>
-	<table style="position: absolute;left: 290px; top:70px;" border="1" align="center" cellspacing="1" cellpadding="5">
+<body >
+	<h2 align="center">&nbsp;<u>Required Data</u></h2>
+<div align="right">
+	<a  style="background-color: black;color: white; cursor: pointer;text-decoration:none;"class="button button1" href="{% url 'home' %}">HOME</a>
+</div>
+	<table align="center" border="1" align="center" cellspacing="2" cellpadding="5">
 		<tr>
 		
 			<th>Phone</th>
 			<th>Item</th>
 			<th>Quantity</th>
+			<th>Operation</th>
 
 		</tr>
 
@@ -41,34 +46,12 @@
 			<td>{{i.Phone}}</td>
 			<td>{{i.Item}}</td>
 			<td>{{i.Quantity}}</td>
-
+			<td style="background-color:#1a0000;" class="button button1" ><a style="background-color:#1a0000; color: white; cursor: pointer;text-decoration:none;"class="button button1" href="{% url 'help2' i.id %}">Help</a></td>
 		</tr>
 		{% endfor %}
 	</table>
 	
 
-	<form style="position: absolute;left: 850px; top:100px;" action="{% url 'help' %}" method="POST" align="center">
-	{% csrf_token %}
-	<br>
-	<br>
-	<center>
-		<h3>For Donation</h3>
-			<h2><u>Help Form</u></h2>
-	</center>
-		
-		<label>Phone:&nbsp;</label>
-		<input type="text" name="phone" placeholder="EnterNumber" required>
-		<br><br>
-		<label>Item:&nbsp;</label>
-		<input type="text" name="item" placeholder="RequiredItem" REQUIRED>
-		<br><br>
-
-		<label>Quantity:&nbsp;</label>
-		<input type="text" name="quan" placeholder="Quantity" REQUIRED>
-		<br><br>
-
-		<input style="background-color: black; cursor: pointer;color: white;"class="button button1" type="submit" value="SUBMIT">
-	</form>
 		
 
 
@@ -77,6 +60,6 @@
 
 	
 
-	<a style="background-color: black;color: white; cursor: pointer;text-decoration:none;"class="button button1" href="{% url 'home' %}">HOME</a>
+	
 </body>
 </html>

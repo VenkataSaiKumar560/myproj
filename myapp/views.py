@@ -75,12 +75,13 @@ def seek(req):
 
 def help(req):
 	if req.method == 'POST':
+		uid = req.POST['ide']
 		up = req.POST['phone']
 		ut = req.POST['item']
 		uq = req.POST['quan']
 		obj = Helping(Hphone=up,Hitem=ut,Hquantity=uq)
 		obj.save()
-		k = Seeking.objects.get(Phone=up)
+		k = Seeking.objects.get(id=uid)
 		k.Quantity = str(abs(int(uq)-int(k.Quantity)))
 		k.save()
 
@@ -93,6 +94,11 @@ def help(req):
 		return HttpResponse("Donated Something")
 	obj = Seeking.objects.all()
 	return render(req,'myapp/help.html',{'data':obj})
+
+
+def help2(req,num):
+	obj = Seeking.objects.get(id=num)
+	return render(req,'myapp/help2.html',{'data':obj})
 
 
 def another(req,ma):

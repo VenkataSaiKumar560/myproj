@@ -27,7 +27,7 @@ urlpatterns = [
     path('seek/',views.seek,name='seek'),
     path('help/',views.help,name='help'),
     path('another/<str:ma>/',views.another,name='another'),
-
+    path('help2/<int:num>/',views.help2,name='help2'),
 
 
 ]

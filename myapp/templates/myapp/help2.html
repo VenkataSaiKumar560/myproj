@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ChooseHelp Page</title>
+	<style>
+		body{
+			background-image: url('https://cdn.pixabay.com/photo/2017/10/14/17/57/computer-2851285__480.png');
+			background-repeat:round;
+			background-size: cover;
+			background-attachment: fixed;
+			align-content: center;
+		}
+		.button{
+			
+			border: none;
+			background-color: purple;
+			padding: 10px;
+			size: 100;
+
+		}
+		.button1{
+			border-radius: 12px;
+
+		}
+	</style>
+</head>
+<body>
+	<form  action="{% url 'help' %}" method="POST" align="center">
+	{% csrf_token %}
+	<br>
+	<br>
+	<center>
+		<div align="right">
+	<a  style="background-color: black;color: white; cursor: pointer;text-decoration:none;"class="button button1" href="{% url 'home' %}">HOME</a>
+</div>
+
+		<h3 style="font-style: italic;"> "We really appreciate your kindness and generosity.<br>
+		 Thanks so much for your help and support!"</h3>
+		
+			<h2><u>Help Form</u></h2>
+	</center>
+		
+		<label>ID:&nbsp;</label>
+		<input type="text" name="ide" value="{{data.id}}" required>
+		<br><br>
+		<label>Phone:&nbsp;</label>
+		<input type="text" name="phone" value="{{data.Phone}}" placeholder="EnterNumber" required>
+		<br><br>
+
+		<label>Item:&nbsp;</label>
+		<input type="text" name="item" value="{{data.Item}}" placeholder="RequiredItem" REQUIRED>
+		<br><br>
+
+		<label>Quantity:&nbsp;</label>
+		<input type="number" name="quan" min="1" max="{{data.Quantity}}" placeholder="Quantity" REQUIRED>
+		<br><br>
+
+		<input style="background-color: black; cursor: pointer;color: white;"class="button button1" type="submit" value="SUBMIT">
+	</form>
+		
+
+
+
+
+
+	
+
+
+
+
+</body>
+</html>
