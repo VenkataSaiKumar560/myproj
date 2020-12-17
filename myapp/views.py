@@ -125,3 +125,4 @@ def adminlogin(req):
 			return HttpResponse("Sorry ! You are not Admin")
 
 	return render(req,'myapp/adminlogin.html')
+
