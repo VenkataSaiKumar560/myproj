@@ -2,8 +2,28 @@
 <html>
 <head>
 	<title>Update Page</title>
+	<style>
+		body{
+			background-image: url('https://media.istockphoto.com/photos/update-picture-id503027519?b=1&k=6&m=503027519&s=170667a&w=0&h=aZpsAep5lbYbUNfYs2eV_iqEcy1ZHZ82gDJlDwpD8v0=');
+			background-repeat:round;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.button{
+			
+			border: none;
+			background-color: purple;
+			padding: 10px;
+			size: 100;
+
+		}
+		.button1{
+			border-radius: 12px;
+
+		}
+	</style>
 </head>
-<body align="center">
+<body style="position: absolute;left: 950px; top:10px;">
 	<form method='POST' align="center">
 		{% csrf_token %}
 		<br>
@@ -12,27 +32,32 @@
 		<center>
 			<h2><u>Updation Form</u></h2>
 		</center>
-		<br><br>
-		<label>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<br>
+		<label style="font-size: 2;font-style: italic;"><b>Name:</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		<input type="text" name="name" value="{{data.Name}}" placeholder="Enter your Name" required>
 		<br><br>
-		<label>Email-ID: &nbsp;</label>
+		<label style="font-size: 2;font-style: italic;"><b>Email-ID:</b> &nbsp;</label>
 		<input type="email" name="mail" value ="{{data.Email}}"placeholder="Enter your Mail-ID" required>
 		<br><br>
 		
-		<label>Password:&nbsp;</label>
+		<label style="font-size: 2;font-style: italic;"><b>Password:&nbsp;</b></label>
 		<input type="password" name="pass" value="{{data.Password}}"  REQUIRED>
 		<br><br>
-		<label>Address:&nbsp;</label>
+		<label style="font-size: 2;font-style: italic;"><b>Address:</b>&nbsp;&nbsp;</label>
 		<input type="text" name="addr" value="{{data.Address}}" REQUIRED>
 		<br><br>
-		<label>DOB:&nbsp;</label>
+		<label style="font-size: 2;font-style: italic;"><b>DOB:</b>&nbsp;&nbsp;&nbsp;</label>
 		<input type="date" name="dob" value="{{data.DOB}}"  REQUIRED>
 		<br><br>
-		<label>Gender:&nbsp;</label>
-		<input type="text" name="gender" value="{{data.Gender}}"  REQUIRED>
+		<label style="font-size: 2;font-style: italic;"><b>Gender:</b>&nbsp;</label>
+		
+		<select name="gender" style="color: black">
+			<option>Male</option>
+			<option>Female</option>
+			<option>Other</option>
+		</select>
 		<br><br>
-		<input style="background-color: dark" type="submit" value="Update">
+		<input class="button button1" style="background-color: #00ffff;cursor: pointer;" type="submit" value="Update">
 
 	</form>
 	<br>

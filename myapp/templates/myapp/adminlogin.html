@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Login Page</title>
+	<style>
+		body{
+			background-image: url('https://media.istockphoto.com/photos/business-team-network-on-smart-phone-picture-id623100290?b=1&k=6&m=623100290&s=170667a&w=0&h=Bkqt6DnqndNQKSTvWR9vgp3zaeDyURTBdQIfKWf8F2Y=');
+			background-repeat:round;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.button{
+			
+			border: none;
+			background-color: green;
+			padding: 10px;
+			size: 100;
+
+		}
+		.button1{
+			border-radius: 12px;
+
+		}
+	</style>
+</head>
+<body style="position: absolute;left: 100px; top: 40px;">
+	<form action="{% url 'adminlogin' %}" method="POST" align="left">
+	{% csrf_token %}
+	<br><br>
+	<h2 style="color: white; "> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>AdminLogin Form</u></h2>
+	
+	
+		<label style="color: white">Admin Email ID:&nbsp;&nbsp;&nbsp;</label>
+		<input  type="text" name="mail" placeholder="Enter your Regd ID" required>
+		<br><br>
+
+		<label style="color: white">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<input type="password" name="pass" placeholder="Enter your password" REQUIRED>
+		<br><br>
+		<input style="background-color: green; cursor: pointer;position: absolute;left: 80px; top:200px;color: white;"  class="button button1" type="submit"value="LOGIN">
+	</form>
+	<br>
+	<br>
+	<br>
+	<button style="position: absolute;left: 80px; top:250px;" class="button button1" type="button" ><a  style="text-decoration: none;color:white;" href="{% url 'home' %}">Home</a></button>
+</body>
+</html>

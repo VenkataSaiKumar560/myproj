@@ -13,6 +13,7 @@ class Register(models.Model):
 
 class Seeking(models.Model):
 	Phone = models.CharField(max_length=10)
+	Img = models.ImageField(null=True,blank=True,upload_to='images/')
 	Item = models.CharField(max_length=30)
 	Quantity = models.CharField(max_length=10)
 	def __str__(self):

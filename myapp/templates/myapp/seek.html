@@ -22,25 +22,32 @@
 			border-radius: 12px;
 
 		}
+		label{
+			color: white;
+		}
 	</style>
 </head>
 <body>
-	<form action="{% url 'seek' %}" method="POST" align="center">
+	<form action="{% url 'seek' %}" method="POST" align="center" enctype="multipart/form-data">
 	{% csrf_token %}
-	<br>
-	<br>
+	<marquee style="color:white;font-size: 20px"><h3>Healing takes time, and asking for help is a courageous step</h3></marquee>
+	<h3 style="font-style: italic;">"Asking for Help isn't Weak,its a Great Example of How to Take Care of Yourself"</h3>
+
 	<center>
 			<h2><u>SeekHelp Form</u></h2>
 	</center>
-		<label>&nbsp;&nbsp;Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<label>Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		<input type="text" name="phone"placeholder="Enter your mobileNo" required>
 		<br><br>
 
+		<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UploadPicture:</label>
+		<input type="file" name="imag">
+		<br><br>
 		<label>NeededItem:&nbsp;</label>
 		<input type="text" name="item" placeholder="RequiredItem" REQUIRED>
 		<br><br>
 
-		<label>Quantity:&nbsp;</label>
+		<label>Quantity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		<input type="text" name="quan" placeholder="Quantity" REQUIRED>
 		<br><br>
 
@@ -48,5 +55,16 @@
 	</form>
 	<br>
 	<br>
+	{% if messages %}
+	<ul class="messages" style="color: white;">
+		{% for m in messages %}
+		<li {% if messages.tags %} class="{{ m.tags }}" {% endif %}>{{m}}</li>
+		{% endfor %}
+
+	</ul>
+
+	{% endif%}
+
+
 </body>
 </html>

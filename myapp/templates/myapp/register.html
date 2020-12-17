@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'myapp/format.css' %}">
 	
 </head>
-<body style="position: absolute;left: 150px; top:30px;">
+<body style="position: absolute;left: 180px; top:20px;">
 	<form action="{% url 'register' %}" method='POST' align="left">
 		{% csrf_token %}
 		<br>
@@ -42,10 +42,22 @@
 		<br><br>
 		<input style="background-color: #00ffff; cursor: pointer;position: absolute;left: 60px; top:360px;"  class="button button1" type="submit" value="Register">
 		<br><br>
-		<button style="position: absolute;left: 60px; top:420px;"  class="button button1" type="button" ><a  style="text-decoration: none;color: black;" href="{% url 'home' %}">Home</a></button>
+		<button style="position: absolute;left: 60px; top:410px;"  class="button button1" type="button" ><a  style="text-decoration: none;color: black;" href="{% url 'home' %}">Home</a></button>
 	
 
 	</form>
+
+
+	<br><br><br>
+	{% if messages %}
+	<ul class="messages" style="color: black; font-style: italic;">
+		{% for m in messages %}
+		<li {% if messages.tags %} class="{{ m.tags }}" {% endif %}><h3>{{m}}</h3></li>
+		{% endfor %}
+
+	</ul>
+
+	{% endif%}
 	<br>
 	<br>
 	<br>

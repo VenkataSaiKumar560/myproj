@@ -2,10 +2,30 @@
 <html>
 <head>
 	<title>User Registerd Data</title>
+	<style>
+		body{
+			background-image: url('https://media.istockphoto.com/photos/businessman-working-on-laptop-protection-network-security-computer-picture-id1167560531?b=1&k=6&m=1167560531&s=170667a&w=0&h=opvfngkWtXncmBIzexh0I0hHaBjDekaf3j9owM6Gr_Q=');
+			background-repeat:round;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.button{
+			
+			border: none;
+			background-color:#ff9966;
+			padding: 10px;
+			size: 100;
+
+		}
+		.button1{
+			border-radius: 12px;
+
+		}
+	</style>
 </head>
 <body>
 	<h2 align="center"><u>User Registerd Data</u></h2>
-	<table border="1" align="center" cellspacing="1" cellpadding="5">
+	<table style="font-weight: bold;" border="5" align="center" cellspacing="1" cellpadding="5">
 		<tr>
 		
 			<th>Name</th>
@@ -31,6 +51,6 @@
 		{% endfor %}
 	</table>
 
-	<a href="{% url 'home' %}">HOME</a>
+	<button style="position: absolute;left: 80px; top:250px;" class="button button1" type="button" ><a  style="text-decoration: none;color:black;" href="{% url 'home' %}">Home</a></button>
 </body>
 </html>
